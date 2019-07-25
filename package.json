@@ -1,0 +1,17 @@
+{
+  "name": "chart_with_chartjs",
+  "version": "1.0.0",
+  "description": "A simple chartjs implementation with nodejs",
+  "main": "app.js",
+  "scripts": {
+    "start":"nodemon app.js"
+  },
+  "keywords": [
+    "Chartjs",
+    "node",
+    "charts",
+    "chart"
+  ],
+  "author": "George Mburu",
+  "license": "ISC"
+}

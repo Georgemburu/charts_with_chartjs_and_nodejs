@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>chart with chart.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+    <script src="Chart.min.js"></script>
+    <style>
+        *,*::after,*::before {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        /* .canvas {
+            width: 70vw !important;
+            height: 70vh !important;
+            position: relative;
+        } */
+    </style>
+</head>
+<body>
+    <div style="max-width:60vw;max-height:60vh;position: relative;">
+            <canvas id="canvas" class="canvas" width="50%" height="50%"></canvas>
+
+    </div>
+    <script>
+        let ctx = document.getElementById('canvas').getContext('2d');
+
+        // global options
+        Chart.defaults.global.defaultFontFamily = 'Lato',
+        Chart.defaults.global.defaultFontSize = 18;
+
+        let chart = new Chart(ctx,{
+            type: "bar",//bar, line,pie,horizontalBar,radar,doughnut,polarArea
+            data: {
+                labels:['Boston','Worcester','Springield','Lowel','Cambridge','New Bedford'],
+                datasets:[{
+                    label:"population",
+                    data:[
+                        617594,
+                        181045,
+                        153030,
+                        106519,
+                        105162,
+                        95072
+                    ],
+                    backgroundColor:['yellow','blue','green','orange','purple','pink','aqua','grey'],
+                    borderColor: 'black',
+                    borderWidth: 1,
+                    hoverBorderWidth:2
+                }]
+            },
+            options:{
+                title:{
+                    display: true,
+                    text:'Most populated cities in Massachusetts',
+                    fontSize: 25
+                },
+                legend:{
+                    display: true,
+                    position: 'right',
+                    labels:{
+                        fontColor: '#000'
+                    }
+                },
+                layout:{
+                    padding: {
+                        left:50,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                },
+                tooltips:{
+                    enabled: true
+                }
+            }
+        })
+    </script>
+</body>
+</html>
